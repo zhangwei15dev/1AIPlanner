@@ -1,0 +1,382 @@
+@use '../../styles/vars' as *;
+
+/* ---------- 头部 ---------- */
+.head {
+  background: $ink;
+  padding: 44px 28px 30px;
+  color: #fff;
+}
+
+.head-eyebrow {
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #8b929c;
+}
+
+.head-title {
+  display: block;
+  margin-top: 8px;
+  font-size: 46px;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+
+.head-stats {
+  display: flex;
+  margin-top: 28px;
+  gap: 48px;
+}
+
+.head-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.head-num {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.head-label {
+  font-size: 19px;
+  color: #8b929c;
+  letter-spacing: 1px;
+}
+
+/* ---------- 工具条 ---------- */
+.tools {
+  background: $card;
+  border-bottom: 1px solid $line;
+  padding: 18px 20px 0;
+}
+
+.search {
+  height: 72px;
+  padding: 0 22px;
+  background: $bg;
+  border: 1px solid $line;
+  font-size: 25px;
+}
+
+.filter {
+  white-space: nowrap;
+}
+
+.filter-row {
+  display: inline-flex;
+  padding: 16px 0;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 14px;
+  padding: 10px 20px;
+  border: 1px solid $line;
+  font-size: 22px;
+  color: $muted;
+}
+
+.filter-chip.on {
+  background: $ink;
+  border-color: $ink;
+  color: #fff;
+}
+
+.filter-dot {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- 员工列表 ---------- */
+.list {
+  padding: 18px 16px 0;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: $card;
+  border: 1px solid $line;
+  padding: 24px;
+  margin-bottom: 14px;
+}
+
+.card-avatar {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.card-avatar-text {
+  color: #fff;
+  font-size: 30px;
+}
+
+.card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-name {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.card-status {
+  font-size: 19px;
+  padding: 2px 12px;
+  border: 1px solid $line;
+  color: $muted;
+}
+
+.card-status.active {
+  color: $ok;
+  border-color: rgba(47, 111, 98, 0.4);
+}
+
+.card-status.leave {
+  color: $danger;
+  border-color: rgba(180, 69, 58, 0.4);
+}
+
+.card-status.training {
+  color: $warn;
+  border-color: rgba(138, 109, 59, 0.4);
+}
+
+.card-role {
+  display: block;
+  margin-top: 6px;
+  font-size: 21px;
+}
+
+.card-hours {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.hours-bar {
+  flex: 1;
+  height: 10px;
+  background: $line-soft;
+}
+
+.hours-fill {
+  height: 100%;
+  background: $ink;
+}
+
+.hours-fill.high {
+  background: $danger;
+}
+
+.hours-text {
+  font-size: 19px;
+  color: $faint;
+}
+
+.card-skill {
+  font-size: 18px;
+  color: $warn;
+  letter-spacing: 1px;
+}
+
+/* ---------- 新增按钮 ---------- */
+.fab {
+  position: fixed;
+  right: 34px;
+  bottom: 64px;
+  width: 100px;
+  height: 100px;
+  background: $ink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.fab text {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ---------- 表单 ---------- */
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(17, 20, 24, 0.35);
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal {
+  width: 100%;
+  max-height: 84vh;
+  background: $card;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 26px 18px;
+  border-bottom: 1px solid $line;
+}
+
+.modal-title {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.modal-close {
+  font-size: 28px;
+  color: $faint;
+}
+
+.modal-body {
+  flex: 1;
+  max-height: 64vh;
+  padding: 18px 26px 0;
+}
+
+.field-label {
+  display: block;
+  margin: 22px 0 12px;
+  font-size: 21px;
+  color: $muted;
+  letter-spacing: 1px;
+}
+
+.field-input {
+  height: 72px;
+  padding: 0 20px;
+  background: $bg;
+  border: 1px solid $line;
+  font-size: 25px;
+}
+
+.chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid $line;
+  font-size: 23px;
+  color: $muted;
+}
+
+.pick.on {
+  background: $ink;
+  border-color: $ink;
+  color: #fff;
+}
+
+.pick-dot {
+  width: 14px;
+  height: 14px;
+}
+
+.stars {
+  display: flex;
+  gap: 16px;
+}
+
+.star {
+  font-size: 40px;
+  color: $line;
+}
+
+.star.on {
+  color: $warn;
+}
+
+.pair {
+  display: flex;
+  gap: 26px;
+}
+
+.pair-item {
+  flex: 1;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid $line;
+}
+
+.stepper-btn {
+  width: 70px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: $muted;
+}
+
+.stepper-num {
+  flex: 1;
+  text-align: center;
+  font-size: 26px;
+}
+
+.danger-btn {
+  margin-top: 32px;
+  padding: 20px;
+  border: 1px solid rgba(180, 69, 58, 0.5);
+  text-align: center;
+  font-size: 23px;
+  color: $danger;
+}
+
+.modal-pad {
+  height: 44px;
+}
+
+.modal-foot {
+  display: flex;
+  border-top: 1px solid $line;
+}
+
+.foot-btn {
+  flex: 1;
+  text-align: center;
+  padding: 24px 0;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.foot-btn.primary {
+  background: $ink;
+  color: #fff;
+}

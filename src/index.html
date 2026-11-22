@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <title>1AIPlanner</title>
+    <script>
+      // H5 端把 rem 基准对齐到 750 设计稿，保证与小程序 rpx 的视觉一致
+      ;(function () {
+        function setRoot() {
+          var w = Math.min(document.documentElement.clientWidth || 375, 750)
+          document.documentElement.style.fontSize = (w / 750) * 40 + 'px'
+        }
+        setRoot()
+        window.addEventListener('resize', setRoot)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

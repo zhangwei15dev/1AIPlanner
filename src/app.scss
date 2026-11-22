@@ -1,0 +1,51 @@
+@use './styles/vars' as *;
+
+page {
+  background: $bg;
+  color: $ink;
+  font-family: 'PingFang SC', 'Helvetica Neue', 'Microsoft YaHei', sans-serif;
+  font-size: 28px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text,
+input {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  background: $bg;
+}
+
+.bottom-pad {
+  height: 56px;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 36px 28px 18px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.section-sub {
+  font-size: 22px;
+  color: $faint;
+  letter-spacing: 1px;
+}
+
+.empty {
+  padding: 44px 28px;
+  font-size: 24px;
+  color: $faint;
+  text-align: center;
+}

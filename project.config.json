@@ -1,0 +1,15 @@
+{
+  "miniprogramRoot": "./dist",
+  "projectname": "1AIPlanner",
+  "description": "门店角色排班与人力分配",
+  "appid": "wx41dee268e14c67b3",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": false,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram"
+}

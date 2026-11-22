@@ -1,0 +1,134 @@
+@use '../../styles/vars' as *;
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $bg;
+}
+
+.chat-body {
+  flex: 1;
+}
+
+.chat-head {
+  padding: 40px 28px 26px;
+  background: $card;
+  border-bottom: 1px solid $line;
+}
+
+.chat-eyebrow {
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: $faint;
+}
+
+.chat-title {
+  display: block;
+  margin-top: 8px;
+  font-size: 44px;
+  font-weight: 300;
+  letter-spacing: 6px;
+}
+
+.chat-line {
+  width: 64px;
+  height: 2px;
+  background: $ink;
+  margin: 18px 0 14px;
+}
+
+.chat-sub {
+  font-size: 22px;
+  color: $muted;
+}
+
+.chat-list {
+  padding: 22px 22px 0;
+}
+
+.msg {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.msg.user {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 84%;
+  padding: 18px 22px;
+  background: $card;
+  border: 1px solid $line;
+}
+
+.msg.user .bubble {
+  background: $ink;
+  border-color: $ink;
+}
+
+.bubble-text {
+  font-size: 24px;
+  line-height: 1.6;
+  color: $ink;
+  white-space: pre-wrap;
+}
+
+.msg.user .bubble-text {
+  color: #fff;
+}
+
+.bubble-text.dim {
+  color: $faint;
+}
+
+.chips {
+  white-space: nowrap;
+  padding: 4px 0 0;
+}
+
+.chips-row {
+  display: inline-flex;
+  padding: 12px 22px;
+}
+
+.chip {
+  margin-right: 14px;
+  padding: 12px 20px;
+  border: 1px solid $line;
+  background: $card;
+  font-size: 22px;
+  color: $muted;
+}
+
+.chat-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  padding-bottom: calc(18px + env(safe-area-inset-bottom));
+  background: $card;
+  border-top: 1px solid $line;
+}
+
+.chat-input {
+  flex: 1;
+  height: 80px;
+  padding: 0 22px;
+  background: $bg;
+  border: 1px solid $line;
+  font-size: 24px;
+}
+
+.chat-send {
+  width: 132px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $ink;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 2px;
+}

@@ -1,0 +1,673 @@
+@use '../../styles/vars' as *;
+
+/* ---------- 门店条 ---------- */
+.topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: $ink;
+  padding: 48px 28px 26px;
+}
+
+.topbar-label {
+  display: block;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #8b929c;
+  margin-bottom: 8px;
+}
+
+.topbar-name {
+  font-size: 38px;
+  color: #fff;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-city {
+  font-size: 22px;
+  color: #b0b6bf;
+}
+
+.topbar-arrow {
+  font-size: 22px;
+  color: #b0b6bf;
+}
+
+/* ---------- 周切换 ---------- */
+.weekbar {
+  display: flex;
+  align-items: center;
+  background: $card;
+  border-bottom: 1px solid $line;
+  padding: 18px 20px;
+  gap: 14px;
+}
+
+.week-nav {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $line;
+  font-size: 34px;
+  color: $ink;
+}
+
+.week-mid {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+}
+
+.week-range {
+  font-size: 29px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.week-tag {
+  font-size: 20px;
+  color: $faint;
+}
+
+.week-today {
+  padding: 12px 20px;
+  border: 1px solid $ink;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+/* ---------- 指标 ---------- */
+.metrics {
+  display: flex;
+  background: $card;
+  border-bottom: 1px solid $line;
+}
+
+.metric {
+  flex: 1;
+  padding: 24px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 1px solid $line-soft;
+}
+
+.metric:first-child {
+  border-left: none;
+}
+
+.metric-num {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.metric-unit {
+  font-size: 20px;
+  color: $muted;
+}
+
+.metric-label {
+  margin-top: 6px;
+  font-size: 20px;
+  color: $faint;
+  letter-spacing: 1px;
+}
+
+/* ---------- 周排班矩阵 ---------- */
+.matrix {
+  margin: 0 16px;
+  background: $card;
+  border: 1px solid $line;
+}
+
+.matrix-row {
+  display: flex;
+  border-top: 1px solid $line-soft;
+}
+
+.matrix-row:first-child {
+  border-top: none;
+}
+
+.matrix-shift {
+  width: 118px;
+  flex: none;
+  padding: 14px 0 14px 18px;
+  border-right: 1px solid $line-soft;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.matrix-shift-name {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.matrix-shift-time {
+  font-size: 19px;
+  color: $faint;
+}
+
+.matrix-top .matrix-shift {
+  min-height: 64px;
+}
+
+.matrix-day {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-left: 1px solid $line-soft;
+}
+
+.matrix-day.today {
+  background: #f4f3ee;
+}
+
+.matrix-dow {
+  font-size: 19px;
+  color: $muted;
+}
+
+.matrix-date {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.matrix-cell {
+  flex: 1;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid $line-soft;
+}
+
+.matrix-cell.focus {
+  background: #fbfaf6;
+}
+
+.matrix-num {
+  font-size: 28px;
+  color: $ink;
+}
+
+.matrix-num.zero {
+  color: $line;
+}
+
+.matrix-cell.lack .matrix-num {
+  color: $danger;
+}
+
+.matrix-lack {
+  font-size: 20px;
+  color: $danger;
+  margin-top: 2px;
+}
+
+/* ---------- 日期页签 ---------- */
+.daytabs {
+  display: flex;
+  margin: 0 16px;
+  background: $card;
+  border: 1px solid $line;
+  border-bottom: none;
+}
+
+.daytab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  border-left: 1px solid $line-soft;
+}
+
+.daytab:first-child {
+  border-left: none;
+}
+
+.daytab.on {
+  background: $ink;
+}
+
+.daytab.on .daytab-dow,
+.daytab.on .daytab-num {
+  color: #fff;
+}
+
+.daytab.today .daytab-num {
+  text-decoration: underline;
+}
+
+.daytab-dow {
+  font-size: 18px;
+  color: $muted;
+}
+
+.daytab-num {
+  font-size: 24px;
+}
+
+/* ---------- 角色 × 时间 视图 ---------- */
+.rt {
+  position: relative;
+  margin: 0 16px;
+  background: $card;
+  border: 1px solid $line;
+}
+
+.rt-head {
+  display: flex;
+  border-bottom: 1px solid $line;
+}
+
+.rt-label {
+  width: 112px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 16px;
+}
+
+.rt-ticks {
+  flex: 1;
+  display: flex;
+  height: 52px;
+}
+
+.rt-tick {
+  flex: 1;
+  border-left: 1px solid $line-soft;
+  display: flex;
+  align-items: center;
+  padding-left: 4px;
+}
+
+.rt-tick-text {
+  font-size: 18px;
+  color: $faint;
+}
+
+.rt-body {
+  position: relative;
+}
+
+.rt-row {
+  display: flex;
+  border-top: 1px solid $line-soft;
+}
+
+.rt-row:first-child {
+  border-top: none;
+}
+
+.rt-row .rt-label {
+  height: 72px;
+  border-right: 1px solid $line-soft;
+}
+
+.rt-dot {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.rt-label-text {
+  font-size: 23px;
+  color: $ink-soft;
+}
+
+.rt-track {
+  position: relative;
+  flex: 1;
+  height: 72px;
+}
+
+.rt-grid {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+
+.rt-cell {
+  flex: 1;
+  border-left: 1px solid $line-soft;
+}
+
+.rt-block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  border-bottom: 2px solid $card;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.rt-block-text {
+  color: #fff;
+  font-size: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rt-empty {
+  position: absolute;
+  left: 12px;
+  top: 20px;
+  font-size: 20px;
+  color: $line;
+}
+
+.rt-now {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: $danger;
+  z-index: 3;
+}
+
+.rt-blank {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  z-index: 4;
+}
+
+.rt-blank-text {
+  font-size: 24px;
+  color: $faint;
+}
+
+.rt-blank-btn {
+  padding: 16px 34px;
+  background: $ink;
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* ---------- 角色工时 ---------- */
+.role-list {
+  margin: 0 16px;
+  background: $card;
+  border: 1px solid $line;
+}
+
+.role-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border-bottom: 1px solid $line-soft;
+}
+
+.role-row:last-child {
+  border-bottom: none;
+}
+
+.role-dot {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.role-name {
+  width: 78px;
+  font-size: 24px;
+}
+
+.role-people {
+  width: 74px;
+  font-size: 20px;
+  color: $faint;
+}
+
+.role-bar {
+  flex: 1;
+  height: 10px;
+  background: $line-soft;
+}
+
+.role-bar-fill {
+  height: 100%;
+}
+
+.role-hours {
+  width: 72px;
+  text-align: right;
+  font-size: 20px;
+  color: $muted;
+}
+
+/* ---------- 弹层 ---------- */
+.sheet-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(17, 20, 24, 0.35);
+  z-index: 50;
+  display: flex;
+  align-items: flex-end;
+}
+
+.sheet {
+  width: 100%;
+  max-height: 68vh;
+  background: $card;
+  display: flex;
+  flex-direction: column;
+}
+
+.sheet-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 26px 18px;
+  border-bottom: 1px solid $line;
+}
+
+.sheet-title {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.sheet-sub {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  color: $faint;
+}
+
+.sheet-close {
+  font-size: 28px;
+  color: $faint;
+  padding-left: 20px;
+}
+
+.sheet-body {
+  flex: 1;
+  max-height: 52vh;
+}
+
+.store-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 26px;
+  border-bottom: 1px solid $line-soft;
+}
+
+.store-row.on {
+  background: #f7f7f2;
+}
+
+.store-name {
+  font-size: 26px;
+}
+
+.store-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 19px;
+  color: $faint;
+}
+
+.store-check {
+  font-size: 26px;
+  color: $ink;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid $line-soft;
+}
+
+.detail-name {
+  font-size: 25px;
+}
+
+.detail-meta {
+  font-size: 20px;
+  color: $muted;
+}
+
+/* ---------- 门店选择：列表 / 地图 ---------- */
+.pick-tabs {
+  display: flex;
+  border-bottom: 1px solid $line;
+}
+
+.pick-tab {
+  flex: 1;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 24px;
+  color: $muted;
+  letter-spacing: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.pick-tab.on {
+  color: $ink;
+  border-bottom-color: $ink;
+}
+
+.store-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.map-canvas {
+  width: 100%;
+  height: 44vh;
+  display: block;
+}
+
+.map-fallback {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 44vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $bg;
+  font-size: 22px;
+  color: $faint;
+}
+
+.map-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 26px;
+  border-top: 1px solid $line;
+}
+
+.map-card-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-card-name {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.map-card-meta {
+  display: block;
+  margin-top: 6px;
+  font-size: 21px;
+  color: $muted;
+}
+
+.map-card-sub {
+  display: block;
+  margin-top: 4px;
+  font-size: 19px;
+  color: $faint;
+}
+
+.map-card-btn {
+  flex: none;
+  padding: 16px 24px;
+  background: $ink;
+}
+
+.map-card-btn text {
+  color: #fff;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.map-card-btn.dim {
+  background: $line;
+}
+
+.map-card-btn.dim text {
+  color: $muted;
+}
