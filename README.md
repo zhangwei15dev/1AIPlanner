@@ -78,6 +78,8 @@
 ## 运行
 
 ```bash
+git clone https://github.com/zhangwei15dev/1AIPlanner.git
+cd 1AIPlanner
 npm install          # 独立部署时先装依赖
 npm run dev:weapp    # 微信开发者工具打开项目根目录（miniprogramRoot = ./dist）
 npm run dev:h5       # 浏览器调试
@@ -95,7 +97,7 @@ src/
 ├── app.tsx / app.config.ts      入口与页面注册（4 个 tab）
 ├── app.scss                     全局样式与设计变量（styles/_vars.scss）
 ├── types/index.ts               领域模型：Role / Zone / Shift / Staff / Assignment / DemandRule
-├── data/demo.ts                 演示数据：7 角色、4 区域、3 班次、6 门店、18 员工、14 条需求规则
+├── data/demo.ts                 演示数据：7 角色、4 区域、3 班次、6 门店、18 员工、16 条需求规则
 ├── services/scheduler.ts        排班算法（纯函数）+ 覆盖率 / 缺口 / 角色工时统计
 ├── services/excel.ts            xlsx 读写 + 模版生成 + 员工/需求导入（fflate + 自研解析）
 ├── services/roster.ts           自定义班表解析（表格型 / 块状型、时间与岗位区域映射）
